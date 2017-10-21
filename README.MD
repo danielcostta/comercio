@@ -1,4 +1,4 @@
-Projeto Guerra
+Projeto Comércio
 =====================
 
 #### Projeto sobre Sistemas de Informação Avançados
