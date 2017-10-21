@@ -1,0 +1,11 @@
+D:\SI\6 Período\Desenvolvimento de Sistemas de Informação Avançados I\VisualStudioProjects\Comercio\Comercio.Modelo\Comercio.Modelo\bin\Debug\Comercio.Modelo.dll.config
+D:\SI\6 Período\Desenvolvimento de Sistemas de Informação Avançados I\VisualStudioProjects\Comercio\Comercio.Modelo\Comercio.Modelo\bin\Debug\Comercio.Modelo.dll
+D:\SI\6 Período\Desenvolvimento de Sistemas de Informação Avançados I\VisualStudioProjects\Comercio\Comercio.Modelo\Comercio.Modelo\bin\Debug\Comercio.Modelo.pdb
+D:\SI\6 Período\Desenvolvimento de Sistemas de Informação Avançados I\VisualStudioProjects\Comercio\Comercio.Modelo\Comercio.Modelo\bin\Debug\EntityFramework.dll
+D:\SI\6 Período\Desenvolvimento de Sistemas de Informação Avançados I\VisualStudioProjects\Comercio\Comercio.Modelo\Comercio.Modelo\bin\Debug\EntityFramework.SqlServer.dll
+D:\SI\6 Período\Desenvolvimento de Sistemas de Informação Avançados I\VisualStudioProjects\Comercio\Comercio.Modelo\Comercio.Modelo\bin\Debug\EntityFramework.xml
+D:\SI\6 Período\Desenvolvimento de Sistemas de Informação Avançados I\VisualStudioProjects\Comercio\Comercio.Modelo\Comercio.Modelo\bin\Debug\EntityFramework.SqlServer.xml
+D:\SI\6 Período\Desenvolvimento de Sistemas de Informação Avançados I\VisualStudioProjects\Comercio\Comercio.Modelo\Comercio.Modelo\obj\Debug\Comercio.Modelo.csprojResolveAssemblyReference.cache
+D:\SI\6 Período\Desenvolvimento de Sistemas de Informação Avançados I\VisualStudioProjects\Comercio\Comercio.Modelo\Comercio.Modelo\obj\Debug\Comercio.Modelo.csproj.CoreCompileInputs.cache
+D:\SI\6 Período\Desenvolvimento de Sistemas de Informação Avançados I\VisualStudioProjects\Comercio\Comercio.Modelo\Comercio.Modelo\obj\Debug\Comercio.Modelo.dll
+D:\SI\6 Período\Desenvolvimento de Sistemas de Informação Avançados I\VisualStudioProjects\Comercio\Comercio.Modelo\Comercio.Modelo\obj\Debug\Comercio.Modelo.pdb

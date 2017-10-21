@@ -1,0 +1,627 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="comercioModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="cidade">
+          <Key>
+            <PropertyRef Name="IDCidade" />
+          </Key>
+          <Property Name="IDCidade" Type="smallint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="NomeCidade" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="IDEstado" Type="tinyint" Nullable="false" />
+        </EntityType>
+        <EntityType Name="cliente">
+          <Key>
+            <PropertyRef Name="IDCliente" />
+          </Key>
+          <Property Name="IDCliente" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="NomeCliente" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="CPF" Type="bigint" Nullable="false" />
+        </EntityType>
+        <EntityType Name="endereco">
+          <Key>
+            <PropertyRef Name="IDEndereco" />
+          </Key>
+          <Property Name="IDEndereco" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Logradouro" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="Numero" Type="smallint" Nullable="false" />
+          <Property Name="Bairro" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="IDCidade" Type="smallint" Nullable="false" />
+          <Property Name="IDCliente" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="entrega">
+          <Key>
+            <PropertyRef Name="CodigoRastreio" />
+          </Key>
+          <Property Name="CodigoRastreio" Type="varchar" MaxLength="20" Nullable="false" />
+          <Property Name="IDTipoEntrega" Type="tinyint" Nullable="false" />
+          <Property Name="IDPedido" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="estado">
+          <Key>
+            <PropertyRef Name="IDEstado" />
+          </Key>
+          <Property Name="IDEstado" Type="tinyint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="NomeEstado" Type="varchar" MaxLength="2" Nullable="false" />
+        </EntityType>
+        <EntityType Name="marca">
+          <Key>
+            <PropertyRef Name="IDMarca" />
+          </Key>
+          <Property Name="IDMarca" Type="tinyint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="NomeMarca" Type="varchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="pedido">
+          <Key>
+            <PropertyRef Name="IDPedido" />
+          </Key>
+          <Property Name="IDPedido" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="IDCliente" Type="int" Nullable="false" />
+          <Property Name="Quantidade" Type="tinyint" Nullable="false" />
+          <Property Name="IDProduto" Type="smallint" Nullable="false" />
+          <Property Name="IDVendedor" Type="tinyint" Nullable="false" />
+        </EntityType>
+        <EntityType Name="produto">
+          <Key>
+            <PropertyRef Name="IDProduto" />
+          </Key>
+          <Property Name="IDProduto" Type="smallint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="NomeProduto" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Valor" Type="float" Nullable="false" />
+          <Property Name="IDMarca" Type="tinyint" Nullable="false" />
+        </EntityType>
+        <EntityType Name="tipoentrega">
+          <Key>
+            <PropertyRef Name="IDTipoEntrega" />
+          </Key>
+          <Property Name="IDTipoEntrega" Type="tinyint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Descricao" Type="varchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="vendedor">
+          <Key>
+            <PropertyRef Name="IDVendedor" />
+          </Key>
+          <Property Name="IDVendedor" Type="tinyint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="NomeVendedor" Type="varchar" MaxLength="100" Nullable="false" />
+        </EntityType>
+        <Association Name="FK__cidade__IDEstado__21B6055D">
+          <End Role="estado" Type="Self.estado" Multiplicity="1" />
+          <End Role="cidade" Type="Self.cidade" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="estado">
+              <PropertyRef Name="IDEstado" />
+            </Principal>
+            <Dependent Role="cidade">
+              <PropertyRef Name="IDEstado" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__endereco__IDCida__22AA2996">
+          <End Role="cidade" Type="Self.cidade" Multiplicity="1" />
+          <End Role="endereco" Type="Self.endereco" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="cidade">
+              <PropertyRef Name="IDCidade" />
+            </Principal>
+            <Dependent Role="endereco">
+              <PropertyRef Name="IDCidade" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__endereco__IDClie__239E4DCF">
+          <End Role="cliente" Type="Self.cliente" Multiplicity="1" />
+          <End Role="endereco" Type="Self.endereco" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="cliente">
+              <PropertyRef Name="IDCliente" />
+            </Principal>
+            <Dependent Role="endereco">
+              <PropertyRef Name="IDCliente" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__entrega__IDPedid__267ABA7A">
+          <End Role="pedido" Type="Self.pedido" Multiplicity="1" />
+          <End Role="entrega" Type="Self.entrega" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="pedido">
+              <PropertyRef Name="IDPedido" />
+            </Principal>
+            <Dependent Role="entrega">
+              <PropertyRef Name="IDPedido" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__entrega__IDTipoE__25869641">
+          <End Role="tipoentrega" Type="Self.tipoentrega" Multiplicity="1" />
+          <End Role="entrega" Type="Self.entrega" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tipoentrega">
+              <PropertyRef Name="IDTipoEntrega" />
+            </Principal>
+            <Dependent Role="entrega">
+              <PropertyRef Name="IDTipoEntrega" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__pedido__IDClient__276EDEB3">
+          <End Role="cliente" Type="Self.cliente" Multiplicity="1" />
+          <End Role="pedido" Type="Self.pedido" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="cliente">
+              <PropertyRef Name="IDCliente" />
+            </Principal>
+            <Dependent Role="pedido">
+              <PropertyRef Name="IDCliente" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__pedido__IDProdut__286302EC">
+          <End Role="produto" Type="Self.produto" Multiplicity="1" />
+          <End Role="pedido" Type="Self.pedido" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="produto">
+              <PropertyRef Name="IDProduto" />
+            </Principal>
+            <Dependent Role="pedido">
+              <PropertyRef Name="IDProduto" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__pedido__IDVended__29572725">
+          <End Role="vendedor" Type="Self.vendedor" Multiplicity="1" />
+          <End Role="pedido" Type="Self.pedido" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="vendedor">
+              <PropertyRef Name="IDVendedor" />
+            </Principal>
+            <Dependent Role="pedido">
+              <PropertyRef Name="IDVendedor" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__produto__IDMarca__24927208">
+          <End Role="marca" Type="Self.marca" Multiplicity="1" />
+          <End Role="produto" Type="Self.produto" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="marca">
+              <PropertyRef Name="IDMarca" />
+            </Principal>
+            <Dependent Role="produto">
+              <PropertyRef Name="IDMarca" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="comercioModelStoreContainer">
+          <EntitySet Name="cidade" EntityType="Self.cidade" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="cliente" EntityType="Self.cliente" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="endereco" EntityType="Self.endereco" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="entrega" EntityType="Self.entrega" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="estado" EntityType="Self.estado" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="marca" EntityType="Self.marca" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="pedido" EntityType="Self.pedido" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="produto" EntityType="Self.produto" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tipoentrega" EntityType="Self.tipoentrega" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="vendedor" EntityType="Self.vendedor" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK__cidade__IDEstado__21B6055D" Association="Self.FK__cidade__IDEstado__21B6055D">
+            <End Role="estado" EntitySet="estado" />
+            <End Role="cidade" EntitySet="cidade" />
+          </AssociationSet>
+          <AssociationSet Name="FK__endereco__IDCida__22AA2996" Association="Self.FK__endereco__IDCida__22AA2996">
+            <End Role="cidade" EntitySet="cidade" />
+            <End Role="endereco" EntitySet="endereco" />
+          </AssociationSet>
+          <AssociationSet Name="FK__endereco__IDClie__239E4DCF" Association="Self.FK__endereco__IDClie__239E4DCF">
+            <End Role="cliente" EntitySet="cliente" />
+            <End Role="endereco" EntitySet="endereco" />
+          </AssociationSet>
+          <AssociationSet Name="FK__entrega__IDPedid__267ABA7A" Association="Self.FK__entrega__IDPedid__267ABA7A">
+            <End Role="pedido" EntitySet="pedido" />
+            <End Role="entrega" EntitySet="entrega" />
+          </AssociationSet>
+          <AssociationSet Name="FK__entrega__IDTipoE__25869641" Association="Self.FK__entrega__IDTipoE__25869641">
+            <End Role="tipoentrega" EntitySet="tipoentrega" />
+            <End Role="entrega" EntitySet="entrega" />
+          </AssociationSet>
+          <AssociationSet Name="FK__pedido__IDClient__276EDEB3" Association="Self.FK__pedido__IDClient__276EDEB3">
+            <End Role="cliente" EntitySet="cliente" />
+            <End Role="pedido" EntitySet="pedido" />
+          </AssociationSet>
+          <AssociationSet Name="FK__pedido__IDProdut__286302EC" Association="Self.FK__pedido__IDProdut__286302EC">
+            <End Role="produto" EntitySet="produto" />
+            <End Role="pedido" EntitySet="pedido" />
+          </AssociationSet>
+          <AssociationSet Name="FK__pedido__IDVended__29572725" Association="Self.FK__pedido__IDVended__29572725">
+            <End Role="vendedor" EntitySet="vendedor" />
+            <End Role="pedido" EntitySet="pedido" />
+          </AssociationSet>
+          <AssociationSet Name="FK__produto__IDMarca__24927208" Association="Self.FK__produto__IDMarca__24927208">
+            <End Role="marca" EntitySet="marca" />
+            <End Role="produto" EntitySet="produto" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="comercioModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityContainer Name="comercioEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="cidade" EntityType="comercioModel.cidade" />
+          <EntitySet Name="cliente" EntityType="comercioModel.cliente" />
+          <EntitySet Name="endereco" EntityType="comercioModel.endereco" />
+          <EntitySet Name="entrega" EntityType="comercioModel.entrega" />
+          <EntitySet Name="estado" EntityType="comercioModel.estado" />
+          <EntitySet Name="marca" EntityType="comercioModel.marca" />
+          <EntitySet Name="pedido" EntityType="comercioModel.pedido" />
+          <EntitySet Name="produto" EntityType="comercioModel.produto" />
+          <EntitySet Name="tipoentrega" EntityType="comercioModel.tipoentrega" />
+          <EntitySet Name="vendedor" EntityType="comercioModel.vendedor" />
+          <AssociationSet Name="FK__cidade__IDEstado__21B6055D" Association="comercioModel.FK__cidade__IDEstado__21B6055D">
+            <End Role="estado" EntitySet="estado" />
+            <End Role="cidade" EntitySet="cidade" />
+          </AssociationSet>
+          <AssociationSet Name="FK__endereco__IDCida__22AA2996" Association="comercioModel.FK__endereco__IDCida__22AA2996">
+            <End Role="cidade" EntitySet="cidade" />
+            <End Role="endereco" EntitySet="endereco" />
+          </AssociationSet>
+          <AssociationSet Name="FK__endereco__IDClie__239E4DCF" Association="comercioModel.FK__endereco__IDClie__239E4DCF">
+            <End Role="cliente" EntitySet="cliente" />
+            <End Role="endereco" EntitySet="endereco" />
+          </AssociationSet>
+          <AssociationSet Name="FK__pedido__IDClient__276EDEB3" Association="comercioModel.FK__pedido__IDClient__276EDEB3">
+            <End Role="cliente" EntitySet="cliente" />
+            <End Role="pedido" EntitySet="pedido" />
+          </AssociationSet>
+          <AssociationSet Name="FK__entrega__IDPedid__267ABA7A" Association="comercioModel.FK__entrega__IDPedid__267ABA7A">
+            <End Role="pedido" EntitySet="pedido" />
+            <End Role="entrega" EntitySet="entrega" />
+          </AssociationSet>
+          <AssociationSet Name="FK__entrega__IDTipoE__25869641" Association="comercioModel.FK__entrega__IDTipoE__25869641">
+            <End Role="tipoentrega" EntitySet="tipoentrega" />
+            <End Role="entrega" EntitySet="entrega" />
+          </AssociationSet>
+          <AssociationSet Name="FK__produto__IDMarca__24927208" Association="comercioModel.FK__produto__IDMarca__24927208">
+            <End Role="marca" EntitySet="marca" />
+            <End Role="produto" EntitySet="produto" />
+          </AssociationSet>
+          <AssociationSet Name="FK__pedido__IDProdut__286302EC" Association="comercioModel.FK__pedido__IDProdut__286302EC">
+            <End Role="produto" EntitySet="produto" />
+            <End Role="pedido" EntitySet="pedido" />
+          </AssociationSet>
+          <AssociationSet Name="FK__pedido__IDVended__29572725" Association="comercioModel.FK__pedido__IDVended__29572725">
+            <End Role="vendedor" EntitySet="vendedor" />
+            <End Role="pedido" EntitySet="pedido" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="cidade">
+          <Key>
+            <PropertyRef Name="IDCidade" />
+          </Key>
+          <Property Name="IDCidade" Type="Int16" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="NomeCidade" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="IDEstado" Type="Byte" Nullable="false" />
+          <NavigationProperty Name="estado" Relationship="comercioModel.FK__cidade__IDEstado__21B6055D" FromRole="cidade" ToRole="estado" />
+          <NavigationProperty Name="endereco" Relationship="comercioModel.FK__endereco__IDCida__22AA2996" FromRole="cidade" ToRole="endereco" />
+        </EntityType>
+        <EntityType Name="cliente">
+          <Key>
+            <PropertyRef Name="IDCliente" />
+          </Key>
+          <Property Name="IDCliente" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="NomeCliente" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="CPF" Type="Int64" Nullable="false" />
+          <NavigationProperty Name="endereco" Relationship="comercioModel.FK__endereco__IDClie__239E4DCF" FromRole="cliente" ToRole="endereco" />
+          <NavigationProperty Name="pedido" Relationship="comercioModel.FK__pedido__IDClient__276EDEB3" FromRole="cliente" ToRole="pedido" />
+        </EntityType>
+        <EntityType Name="endereco">
+          <Key>
+            <PropertyRef Name="IDEndereco" />
+          </Key>
+          <Property Name="IDEndereco" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Logradouro" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="Numero" Type="Int16" Nullable="false" />
+          <Property Name="Bairro" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="IDCidade" Type="Int16" Nullable="false" />
+          <Property Name="IDCliente" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="cidade" Relationship="comercioModel.FK__endereco__IDCida__22AA2996" FromRole="endereco" ToRole="cidade" />
+          <NavigationProperty Name="cliente" Relationship="comercioModel.FK__endereco__IDClie__239E4DCF" FromRole="endereco" ToRole="cliente" />
+        </EntityType>
+        <EntityType Name="entrega">
+          <Key>
+            <PropertyRef Name="CodigoRastreio" />
+          </Key>
+          <Property Name="CodigoRastreio" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="IDTipoEntrega" Type="Byte" Nullable="false" />
+          <Property Name="IDPedido" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="pedido" Relationship="comercioModel.FK__entrega__IDPedid__267ABA7A" FromRole="entrega" ToRole="pedido" />
+          <NavigationProperty Name="tipoentrega" Relationship="comercioModel.FK__entrega__IDTipoE__25869641" FromRole="entrega" ToRole="tipoentrega" />
+        </EntityType>
+        <EntityType Name="estado">
+          <Key>
+            <PropertyRef Name="IDEstado" />
+          </Key>
+          <Property Name="IDEstado" Type="Byte" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="NomeEstado" Type="String" Nullable="false" MaxLength="2" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="cidade" Relationship="comercioModel.FK__cidade__IDEstado__21B6055D" FromRole="estado" ToRole="cidade" />
+        </EntityType>
+        <EntityType Name="marca">
+          <Key>
+            <PropertyRef Name="IDMarca" />
+          </Key>
+          <Property Name="IDMarca" Type="Byte" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="NomeMarca" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="produto" Relationship="comercioModel.FK__produto__IDMarca__24927208" FromRole="marca" ToRole="produto" />
+        </EntityType>
+        <EntityType Name="pedido">
+          <Key>
+            <PropertyRef Name="IDPedido" />
+          </Key>
+          <Property Name="IDPedido" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="IDCliente" Type="Int32" Nullable="false" />
+          <Property Name="Quantidade" Type="Byte" Nullable="false" />
+          <Property Name="IDProduto" Type="Int16" Nullable="false" />
+          <Property Name="IDVendedor" Type="Byte" Nullable="false" />
+          <NavigationProperty Name="cliente" Relationship="comercioModel.FK__pedido__IDClient__276EDEB3" FromRole="pedido" ToRole="cliente" />
+          <NavigationProperty Name="entrega" Relationship="comercioModel.FK__entrega__IDPedid__267ABA7A" FromRole="pedido" ToRole="entrega" />
+          <NavigationProperty Name="produto" Relationship="comercioModel.FK__pedido__IDProdut__286302EC" FromRole="pedido" ToRole="produto" />
+          <NavigationProperty Name="vendedor" Relationship="comercioModel.FK__pedido__IDVended__29572725" FromRole="pedido" ToRole="vendedor" />
+        </EntityType>
+        <EntityType Name="produto">
+          <Key>
+            <PropertyRef Name="IDProduto" />
+          </Key>
+          <Property Name="IDProduto" Type="Int16" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="NomeProduto" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Valor" Type="Double" Nullable="false" />
+          <Property Name="IDMarca" Type="Byte" Nullable="false" />
+          <NavigationProperty Name="marca" Relationship="comercioModel.FK__produto__IDMarca__24927208" FromRole="produto" ToRole="marca" />
+          <NavigationProperty Name="pedido" Relationship="comercioModel.FK__pedido__IDProdut__286302EC" FromRole="produto" ToRole="pedido" />
+        </EntityType>
+        <EntityType Name="tipoentrega">
+          <Key>
+            <PropertyRef Name="IDTipoEntrega" />
+          </Key>
+          <Property Name="IDTipoEntrega" Type="Byte" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Descricao" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="entrega" Relationship="comercioModel.FK__entrega__IDTipoE__25869641" FromRole="tipoentrega" ToRole="entrega" />
+        </EntityType>
+        <EntityType Name="vendedor">
+          <Key>
+            <PropertyRef Name="IDVendedor" />
+          </Key>
+          <Property Name="IDVendedor" Type="Byte" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="NomeVendedor" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="pedido" Relationship="comercioModel.FK__pedido__IDVended__29572725" FromRole="vendedor" ToRole="pedido" />
+        </EntityType>
+        <Association Name="FK__cidade__IDEstado__21B6055D">
+          <End Type="comercioModel.estado" Role="estado" Multiplicity="1" />
+          <End Type="comercioModel.cidade" Role="cidade" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="estado">
+              <PropertyRef Name="IDEstado" />
+            </Principal>
+            <Dependent Role="cidade">
+              <PropertyRef Name="IDEstado" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__endereco__IDCida__22AA2996">
+          <End Type="comercioModel.cidade" Role="cidade" Multiplicity="1" />
+          <End Type="comercioModel.endereco" Role="endereco" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="cidade">
+              <PropertyRef Name="IDCidade" />
+            </Principal>
+            <Dependent Role="endereco">
+              <PropertyRef Name="IDCidade" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__endereco__IDClie__239E4DCF">
+          <End Type="comercioModel.cliente" Role="cliente" Multiplicity="1" />
+          <End Type="comercioModel.endereco" Role="endereco" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="cliente">
+              <PropertyRef Name="IDCliente" />
+            </Principal>
+            <Dependent Role="endereco">
+              <PropertyRef Name="IDCliente" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__pedido__IDClient__276EDEB3">
+          <End Type="comercioModel.cliente" Role="cliente" Multiplicity="1" />
+          <End Type="comercioModel.pedido" Role="pedido" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="cliente">
+              <PropertyRef Name="IDCliente" />
+            </Principal>
+            <Dependent Role="pedido">
+              <PropertyRef Name="IDCliente" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__entrega__IDPedid__267ABA7A">
+          <End Type="comercioModel.pedido" Role="pedido" Multiplicity="1" />
+          <End Type="comercioModel.entrega" Role="entrega" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="pedido">
+              <PropertyRef Name="IDPedido" />
+            </Principal>
+            <Dependent Role="entrega">
+              <PropertyRef Name="IDPedido" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__entrega__IDTipoE__25869641">
+          <End Type="comercioModel.tipoentrega" Role="tipoentrega" Multiplicity="1" />
+          <End Type="comercioModel.entrega" Role="entrega" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tipoentrega">
+              <PropertyRef Name="IDTipoEntrega" />
+            </Principal>
+            <Dependent Role="entrega">
+              <PropertyRef Name="IDTipoEntrega" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__produto__IDMarca__24927208">
+          <End Type="comercioModel.marca" Role="marca" Multiplicity="1" />
+          <End Type="comercioModel.produto" Role="produto" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="marca">
+              <PropertyRef Name="IDMarca" />
+            </Principal>
+            <Dependent Role="produto">
+              <PropertyRef Name="IDMarca" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__pedido__IDProdut__286302EC">
+          <End Type="comercioModel.produto" Role="produto" Multiplicity="1" />
+          <End Type="comercioModel.pedido" Role="pedido" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="produto">
+              <PropertyRef Name="IDProduto" />
+            </Principal>
+            <Dependent Role="pedido">
+              <PropertyRef Name="IDProduto" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__pedido__IDVended__29572725">
+          <End Type="comercioModel.vendedor" Role="vendedor" Multiplicity="1" />
+          <End Type="comercioModel.pedido" Role="pedido" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="vendedor">
+              <PropertyRef Name="IDVendedor" />
+            </Principal>
+            <Dependent Role="pedido">
+              <PropertyRef Name="IDVendedor" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="comercioModelStoreContainer" CdmEntityContainer="comercioEntities">
+          <EntitySetMapping Name="cidade">
+            <EntityTypeMapping TypeName="comercioModel.cidade">
+              <MappingFragment StoreEntitySet="cidade">
+                <ScalarProperty Name="IDEstado" ColumnName="IDEstado" />
+                <ScalarProperty Name="NomeCidade" ColumnName="NomeCidade" />
+                <ScalarProperty Name="IDCidade" ColumnName="IDCidade" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="cliente">
+            <EntityTypeMapping TypeName="comercioModel.cliente">
+              <MappingFragment StoreEntitySet="cliente">
+                <ScalarProperty Name="CPF" ColumnName="CPF" />
+                <ScalarProperty Name="NomeCliente" ColumnName="NomeCliente" />
+                <ScalarProperty Name="IDCliente" ColumnName="IDCliente" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="endereco">
+            <EntityTypeMapping TypeName="comercioModel.endereco">
+              <MappingFragment StoreEntitySet="endereco">
+                <ScalarProperty Name="IDCliente" ColumnName="IDCliente" />
+                <ScalarProperty Name="IDCidade" ColumnName="IDCidade" />
+                <ScalarProperty Name="Bairro" ColumnName="Bairro" />
+                <ScalarProperty Name="Numero" ColumnName="Numero" />
+                <ScalarProperty Name="Logradouro" ColumnName="Logradouro" />
+                <ScalarProperty Name="IDEndereco" ColumnName="IDEndereco" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="entrega">
+            <EntityTypeMapping TypeName="comercioModel.entrega">
+              <MappingFragment StoreEntitySet="entrega">
+                <ScalarProperty Name="IDPedido" ColumnName="IDPedido" />
+                <ScalarProperty Name="IDTipoEntrega" ColumnName="IDTipoEntrega" />
+                <ScalarProperty Name="CodigoRastreio" ColumnName="CodigoRastreio" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="estado">
+            <EntityTypeMapping TypeName="comercioModel.estado">
+              <MappingFragment StoreEntitySet="estado">
+                <ScalarProperty Name="NomeEstado" ColumnName="NomeEstado" />
+                <ScalarProperty Name="IDEstado" ColumnName="IDEstado" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="marca">
+            <EntityTypeMapping TypeName="comercioModel.marca">
+              <MappingFragment StoreEntitySet="marca">
+                <ScalarProperty Name="NomeMarca" ColumnName="NomeMarca" />
+                <ScalarProperty Name="IDMarca" ColumnName="IDMarca" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="pedido">
+            <EntityTypeMapping TypeName="comercioModel.pedido">
+              <MappingFragment StoreEntitySet="pedido">
+                <ScalarProperty Name="IDVendedor" ColumnName="IDVendedor" />
+                <ScalarProperty Name="IDProduto" ColumnName="IDProduto" />
+                <ScalarProperty Name="Quantidade" ColumnName="Quantidade" />
+                <ScalarProperty Name="IDCliente" ColumnName="IDCliente" />
+                <ScalarProperty Name="IDPedido" ColumnName="IDPedido" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="produto">
+            <EntityTypeMapping TypeName="comercioModel.produto">
+              <MappingFragment StoreEntitySet="produto">
+                <ScalarProperty Name="IDMarca" ColumnName="IDMarca" />
+                <ScalarProperty Name="Valor" ColumnName="Valor" />
+                <ScalarProperty Name="NomeProduto" ColumnName="NomeProduto" />
+                <ScalarProperty Name="IDProduto" ColumnName="IDProduto" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tipoentrega">
+            <EntityTypeMapping TypeName="comercioModel.tipoentrega">
+              <MappingFragment StoreEntitySet="tipoentrega">
+                <ScalarProperty Name="Descricao" ColumnName="Descricao" />
+                <ScalarProperty Name="IDTipoEntrega" ColumnName="IDTipoEntrega" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="vendedor">
+            <EntityTypeMapping TypeName="comercioModel.vendedor">
+              <MappingFragment StoreEntitySet="vendedor">
+                <ScalarProperty Name="NomeVendedor" ColumnName="NomeVendedor" />
+                <ScalarProperty Name="IDVendedor" ColumnName="IDVendedor" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="6cbc8b851f2c48e88d8e871da8784494" Name="Diagram1">
+        <EntityTypeShape EntityType="comercioModel.cidade" Width="1.5" PointX="3.75" PointY="8.375" />
+        <EntityTypeShape EntityType="comercioModel.cliente" Width="1.5" PointX="0.75" PointY="4.375" />
+        <EntityTypeShape EntityType="comercioModel.endereco" Width="1.5" PointX="6" PointY="4.125" />
+        <EntityTypeShape EntityType="comercioModel.entrega" Width="1.5" PointX="5.25" PointY="1.375" />
+        <EntityTypeShape EntityType="comercioModel.estado" Width="1.5" PointX="1.5" PointY="8.625" />
+        <EntityTypeShape EntityType="comercioModel.marca" Width="1.5" PointX="1.5" PointY="15.75" />
+        <EntityTypeShape EntityType="comercioModel.pedido" Width="1.5" PointX="3" PointY="4" />
+        <EntityTypeShape EntityType="comercioModel.produto" Width="1.5" PointX="0.75" PointY="12.5" />
+        <EntityTypeShape EntityType="comercioModel.tipoentrega" Width="1.5" PointX="3" PointY="0.75" />
+        <EntityTypeShape EntityType="comercioModel.vendedor" Width="1.5" PointX="0.75" PointY="1.125" />
+        <AssociationConnector Association="comercioModel.FK__cidade__IDEstado__21B6055D" />
+        <AssociationConnector Association="comercioModel.FK__endereco__IDCida__22AA2996" />
+        <AssociationConnector Association="comercioModel.FK__endereco__IDClie__239E4DCF" />
+        <AssociationConnector Association="comercioModel.FK__pedido__IDClient__276EDEB3" />
+        <AssociationConnector Association="comercioModel.FK__entrega__IDPedid__267ABA7A" />
+        <AssociationConnector Association="comercioModel.FK__entrega__IDTipoE__25869641" />
+        <AssociationConnector Association="comercioModel.FK__produto__IDMarca__24927208" />
+        <AssociationConnector Association="comercioModel.FK__pedido__IDProdut__286302EC" />
+        <AssociationConnector Association="comercioModel.FK__pedido__IDVended__29572725" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
