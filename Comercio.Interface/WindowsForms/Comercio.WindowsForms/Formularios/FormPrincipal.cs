@@ -26,5 +26,19 @@ namespace Comercio.WindowsForms.Formularios
             formVendedor.MdiParent = this;
             formVendedor.Show();
         }
+
+        private void marcasToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FormMarca formMarca = new FormMarca();
+            formMarca.MdiParent = this;
+            formMarca.Show();
+        }
+
+        private void tipoDeEntregaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FormTipoEntrega formTipoEntrega = new FormTipoEntrega();
+            formTipoEntrega.MdiParent = this;
+            formTipoEntrega.Show();
+        }
     }
 }

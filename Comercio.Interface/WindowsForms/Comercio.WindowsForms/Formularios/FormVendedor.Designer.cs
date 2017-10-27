@@ -55,7 +55,7 @@
             // 
             // btnSalvarVendedor
             // 
-            this.btnSalvarVendedor.Location = new System.Drawing.Point(40, 86);
+            this.btnSalvarVendedor.Location = new System.Drawing.Point(26, 74);
             this.btnSalvarVendedor.Name = "btnSalvarVendedor";
             this.btnSalvarVendedor.Size = new System.Drawing.Size(111, 23);
             this.btnSalvarVendedor.TabIndex = 2;
@@ -65,7 +65,7 @@
             // 
             // btnEditarVendedor
             // 
-            this.btnEditarVendedor.Location = new System.Drawing.Point(225, 86);
+            this.btnEditarVendedor.Location = new System.Drawing.Point(193, 74);
             this.btnEditarVendedor.Name = "btnEditarVendedor";
             this.btnEditarVendedor.Size = new System.Drawing.Size(111, 23);
             this.btnEditarVendedor.TabIndex = 3;
@@ -75,7 +75,7 @@
             // 
             // btnExcluirVendedor
             // 
-            this.btnExcluirVendedor.Location = new System.Drawing.Point(410, 86);
+            this.btnExcluirVendedor.Location = new System.Drawing.Point(357, 74);
             this.btnExcluirVendedor.Name = "btnExcluirVendedor";
             this.btnExcluirVendedor.Size = new System.Drawing.Size(111, 23);
             this.btnExcluirVendedor.TabIndex = 4;
@@ -86,16 +86,16 @@
             // dataGridVendedor
             // 
             this.dataGridVendedor.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridVendedor.Location = new System.Drawing.Point(3, 154);
+            this.dataGridVendedor.Location = new System.Drawing.Point(12, 154);
             this.dataGridVendedor.Name = "dataGridVendedor";
-            this.dataGridVendedor.Size = new System.Drawing.Size(589, 150);
+            this.dataGridVendedor.Size = new System.Drawing.Size(712, 256);
             this.dataGridVendedor.TabIndex = 5;
             // 
             // FormVendedor
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(596, 307);
+            this.ClientSize = new System.Drawing.Size(736, 422);
             this.Controls.Add(this.dataGridVendedor);
             this.Controls.Add(this.btnExcluirVendedor);
             this.Controls.Add(this.btnEditarVendedor);

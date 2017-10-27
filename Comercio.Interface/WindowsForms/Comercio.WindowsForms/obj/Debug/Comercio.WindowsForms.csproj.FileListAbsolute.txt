@@ -16,3 +16,4 @@ D:\SI\6 Período\Desenvolvimento de Sistemas de Informação Avançados I\Visual
 D:\SI\6 Período\Desenvolvimento de Sistemas de Informação Avançados I\VisualStudioProjects\Comercio\Comercio.Interface\WindowsForms\Comercio.WindowsForms\bin\Debug\Comercio.Modelo.dll.config
 D:\SI\6 Período\Desenvolvimento de Sistemas de Informação Avançados I\VisualStudioProjects\Comercio\Comercio.Interface\WindowsForms\Comercio.WindowsForms\bin\Debug\EntityFramework.xml
 D:\SI\6 Período\Desenvolvimento de Sistemas de Informação Avançados I\VisualStudioProjects\Comercio\Comercio.Interface\WindowsForms\Comercio.WindowsForms\bin\Debug\EntityFramework.SqlServer.xml
+D:\SI\6 Período\Desenvolvimento de Sistemas de Informação Avançados I\VisualStudioProjects\Comercio\Comercio.Interface\WindowsForms\Comercio.WindowsForms\obj\Debug\Comercio.WindowsForms.Formularios.FormMarca.resources
