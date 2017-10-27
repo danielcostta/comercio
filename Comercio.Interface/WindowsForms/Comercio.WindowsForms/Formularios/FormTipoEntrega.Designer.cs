@@ -29,12 +29,12 @@
         private void InitializeComponent()
         {
             this.lblDescricaoTipoEntrega = new System.Windows.Forms.Label();
-            this.txtTipoEntrega = new System.Windows.Forms.TextBox();
+            this.txtDescricao = new System.Windows.Forms.TextBox();
             this.btnSalvarTipoEntrega = new System.Windows.Forms.Button();
             this.btnEditarTipoEntrega = new System.Windows.Forms.Button();
             this.btnExcluirTipoEntrega = new System.Windows.Forms.Button();
-            this.dataTipoEntrega = new System.Windows.Forms.DataGridView();
-            ((System.ComponentModel.ISupportInitialize)(this.dataTipoEntrega)).BeginInit();
+            this.dataGridTipoEntrega = new System.Windows.Forms.DataGridView();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridTipoEntrega)).BeginInit();
             this.SuspendLayout();
             // 
             // lblDescricaoTipoEntrega
@@ -46,12 +46,12 @@
             this.lblDescricaoTipoEntrega.TabIndex = 0;
             this.lblDescricaoTipoEntrega.Text = "Descrição:";
             // 
-            // txtTipoEntrega
+            // txtDescricao
             // 
-            this.txtTipoEntrega.Location = new System.Drawing.Point(78, 24);
-            this.txtTipoEntrega.Name = "txtTipoEntrega";
-            this.txtTipoEntrega.Size = new System.Drawing.Size(355, 20);
-            this.txtTipoEntrega.TabIndex = 1;
+            this.txtDescricao.Location = new System.Drawing.Point(78, 24);
+            this.txtDescricao.Name = "txtDescricao";
+            this.txtDescricao.Size = new System.Drawing.Size(355, 20);
+            this.txtDescricao.TabIndex = 1;
             // 
             // btnSalvarTipoEntrega
             // 
@@ -61,6 +61,7 @@
             this.btnSalvarTipoEntrega.TabIndex = 2;
             this.btnSalvarTipoEntrega.Text = "Salvar";
             this.btnSalvarTipoEntrega.UseVisualStyleBackColor = true;
+            this.btnSalvarTipoEntrega.Click += new System.EventHandler(this.btnSalvarTipoEntrega_Click);
             // 
             // btnEditarTipoEntrega
             // 
@@ -70,6 +71,7 @@
             this.btnEditarTipoEntrega.TabIndex = 3;
             this.btnEditarTipoEntrega.Text = "Editar";
             this.btnEditarTipoEntrega.UseVisualStyleBackColor = true;
+            this.btnEditarTipoEntrega.Click += new System.EventHandler(this.btnEditarTipoEntrega_Click);
             // 
             // btnExcluirTipoEntrega
             // 
@@ -79,30 +81,31 @@
             this.btnExcluirTipoEntrega.TabIndex = 4;
             this.btnExcluirTipoEntrega.Text = "Excluir";
             this.btnExcluirTipoEntrega.UseVisualStyleBackColor = true;
+            this.btnExcluirTipoEntrega.Click += new System.EventHandler(this.btnExcluirTipoEntrega_Click);
             // 
-            // dataTipoEntrega
+            // dataGridTipoEntrega
             // 
-            this.dataTipoEntrega.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataTipoEntrega.Location = new System.Drawing.Point(12, 171);
-            this.dataTipoEntrega.Name = "dataTipoEntrega";
-            this.dataTipoEntrega.Size = new System.Drawing.Size(712, 239);
-            this.dataTipoEntrega.TabIndex = 5;
+            this.dataGridTipoEntrega.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridTipoEntrega.Location = new System.Drawing.Point(12, 171);
+            this.dataGridTipoEntrega.Name = "dataGridTipoEntrega";
+            this.dataGridTipoEntrega.Size = new System.Drawing.Size(712, 239);
+            this.dataGridTipoEntrega.TabIndex = 5;
             // 
             // FormTipoEntrega
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(736, 422);
-            this.Controls.Add(this.dataTipoEntrega);
+            this.Controls.Add(this.dataGridTipoEntrega);
             this.Controls.Add(this.btnExcluirTipoEntrega);
             this.Controls.Add(this.btnEditarTipoEntrega);
             this.Controls.Add(this.btnSalvarTipoEntrega);
-            this.Controls.Add(this.txtTipoEntrega);
+            this.Controls.Add(this.txtDescricao);
             this.Controls.Add(this.lblDescricaoTipoEntrega);
             this.Name = "FormTipoEntrega";
             this.Text = "FormTipoEntrega";
             this.Load += new System.EventHandler(this.FormTipoEntrega_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.dataTipoEntrega)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridTipoEntrega)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -111,10 +114,10 @@
         #endregion
 
         private System.Windows.Forms.Label lblDescricaoTipoEntrega;
-        private System.Windows.Forms.TextBox txtTipoEntrega;
+        private System.Windows.Forms.TextBox txtDescricao;
         private System.Windows.Forms.Button btnSalvarTipoEntrega;
         private System.Windows.Forms.Button btnEditarTipoEntrega;
         private System.Windows.Forms.Button btnExcluirTipoEntrega;
-        private System.Windows.Forms.DataGridView dataTipoEntrega;
+        private System.Windows.Forms.DataGridView dataGridTipoEntrega;
     }
 }

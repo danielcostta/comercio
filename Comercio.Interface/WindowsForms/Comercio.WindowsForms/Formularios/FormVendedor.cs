@@ -28,12 +28,12 @@ namespace Comercio.WindowsForms.Formularios
             dataGridVendedor.MultiSelect = false;
             dataGridVendedor.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
 
-            dataGridVendedor.Columns[0].HeaderText = "ID do Vendedor";
+            dataGridVendedor.Columns[0].HeaderText = "ID do vendedor";
             dataGridVendedor.Columns[0].DataPropertyName = "IDVendedor";
             dataGridVendedor.Columns[0].Width = 240;
             dataGridVendedor.Columns[0].Name = "IDVendedor";
 
-            dataGridVendedor.Columns[1].HeaderText = "Nome do Vendedor";
+            dataGridVendedor.Columns[1].HeaderText = "Nome do vendedor";
             dataGridVendedor.Columns[1].DataPropertyName = "NomeVendedor";
             dataGridVendedor.Columns[1].Width = 300;
             dataGridVendedor.Columns[1].Name = "NomeVendedor";
