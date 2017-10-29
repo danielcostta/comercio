@@ -35,6 +35,8 @@
             this.marcasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.gerenciadorDeTipoDeEntregaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tipoDeEntregaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.gerenciadorDeProdutosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.produtosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -43,7 +45,8 @@
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.gerenciadorDeVendedoresToolStripMenuItem,
             this.gerenciadorDeMarcasToolStripMenuItem,
-            this.gerenciadorDeTipoDeEntregaToolStripMenuItem});
+            this.gerenciadorDeTipoDeEntregaToolStripMenuItem,
+            this.gerenciadorDeProdutosToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(877, 24);
@@ -95,6 +98,21 @@
             this.tipoDeEntregaToolStripMenuItem.Text = "Tipo de Entrega";
             this.tipoDeEntregaToolStripMenuItem.Click += new System.EventHandler(this.tipoDeEntregaToolStripMenuItem_Click);
             // 
+            // gerenciadorDeProdutosToolStripMenuItem
+            // 
+            this.gerenciadorDeProdutosToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.produtosToolStripMenuItem});
+            this.gerenciadorDeProdutosToolStripMenuItem.Name = "gerenciadorDeProdutosToolStripMenuItem";
+            this.gerenciadorDeProdutosToolStripMenuItem.Size = new System.Drawing.Size(150, 20);
+            this.gerenciadorDeProdutosToolStripMenuItem.Text = "Gerenciador de Produtos";
+            // 
+            // produtosToolStripMenuItem
+            // 
+            this.produtosToolStripMenuItem.Name = "produtosToolStripMenuItem";
+            this.produtosToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.produtosToolStripMenuItem.Text = "Produtos";
+            this.produtosToolStripMenuItem.Click += new System.EventHandler(this.produtosToolStripMenuItem_Click);
+            // 
             // FormPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -121,5 +139,7 @@
         private System.Windows.Forms.ToolStripMenuItem marcasToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem gerenciadorDeTipoDeEntregaToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem tipoDeEntregaToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem gerenciadorDeProdutosToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem produtosToolStripMenuItem;
     }
 }

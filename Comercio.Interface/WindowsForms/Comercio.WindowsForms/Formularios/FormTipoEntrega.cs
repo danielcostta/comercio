@@ -103,7 +103,6 @@ namespace Comercio.WindowsForms.Formularios
                 MessageBox.Show("Selecione um tipo de entrega para alterar!");
             }
 
-
         }
 
         private void btnExcluirTipoEntrega_Click(object sender, EventArgs e)
