@@ -37,7 +37,7 @@
             this.btnExcluirProduto = new System.Windows.Forms.Button();
             this.lblMarcaProduto = new System.Windows.Forms.Label();
             this.dataGridProduto = new System.Windows.Forms.DataGridView();
-            this.txtMarcaProduto = new System.Windows.Forms.TextBox();
+            this.cbMarcaProduto = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridProduto)).BeginInit();
             this.SuspendLayout();
             // 
@@ -120,19 +120,20 @@
             this.dataGridProduto.Size = new System.Drawing.Size(712, 239);
             this.dataGridProduto.TabIndex = 9;
             // 
-            // txtMarcaProduto
+            // cbMarcaProduto
             // 
-            this.txtMarcaProduto.Location = new System.Drawing.Point(130, 86);
-            this.txtMarcaProduto.Name = "txtMarcaProduto";
-            this.txtMarcaProduto.Size = new System.Drawing.Size(355, 20);
-            this.txtMarcaProduto.TabIndex = 10;
+            this.cbMarcaProduto.FormattingEnabled = true;
+            this.cbMarcaProduto.Location = new System.Drawing.Point(130, 86);
+            this.cbMarcaProduto.Name = "cbMarcaProduto";
+            this.cbMarcaProduto.Size = new System.Drawing.Size(355, 21);
+            this.cbMarcaProduto.TabIndex = 11;
             // 
             // FormProduto
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(736, 422);
-            this.Controls.Add(this.txtMarcaProduto);
+            this.Controls.Add(this.cbMarcaProduto);
             this.Controls.Add(this.dataGridProduto);
             this.Controls.Add(this.lblMarcaProduto);
             this.Controls.Add(this.btnExcluirProduto);
@@ -162,6 +163,6 @@
         private System.Windows.Forms.Button btnExcluirProduto;
         private System.Windows.Forms.Label lblMarcaProduto;
         private System.Windows.Forms.DataGridView dataGridProduto;
-        private System.Windows.Forms.TextBox txtMarcaProduto;
+        private System.Windows.Forms.ComboBox cbMarcaProduto;
     }
 }

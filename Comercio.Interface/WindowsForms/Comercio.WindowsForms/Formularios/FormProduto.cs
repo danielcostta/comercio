@@ -23,6 +23,10 @@ namespace Comercio.WindowsForms.Formularios
 
         private void FormProduto_Load(object sender, EventArgs e)
         {
+            cbMarcaProduto.DataSource = db.marca.ToList();
+            cbMarcaProduto.DisplayMember = "NomeMarca";
+            cbMarcaProduto.ValueMember = "IDMarca";
+
             dataGridProduto.ColumnCount = 4;
             dataGridProduto.EditMode = DataGridViewEditMode.EditProgrammatically;
             dataGridProduto.MultiSelect = false;
@@ -71,7 +75,9 @@ namespace Comercio.WindowsForms.Formularios
 
             product.Valor = Double.Parse(txtValorProduto.Text);
 
-            product.IDMarca = byte.Parse(txtMarcaProduto.Text);
+            var a = cbMarcaProduto.SelectedValue;
+
+            product.IDMarca = Convert.ToByte(a);
 
             string mensagem = "";
 
@@ -100,7 +106,6 @@ namespace Comercio.WindowsForms.Formularios
         {
             txtNomeProduto.Clear();
             txtValorProduto.Clear();
-            txtMarcaProduto.Clear();
             product = null;
         }
 
@@ -117,7 +122,7 @@ namespace Comercio.WindowsForms.Formularios
 
                 txtValorProduto.Text = Convert.ToString(product.Valor);
 
-                txtMarcaProduto.Text = Convert.ToString(product.IDMarca);
+                cbMarcaProduto.SelectedValue = product.IDMarca;
 
             }
 
@@ -134,7 +139,7 @@ namespace Comercio.WindowsForms.Formularios
             if (dataGridProduto.SelectedRows.Count > 0)
             {
                 DataGridViewRow linha = dataGridProduto.SelectedRows[0];
-                byte idProduto = (byte)linha.Cells["IDProduto"].Value;
+                short idProduto = (short)linha.Cells["IDProduto"].Value;
 
                 product = db.produto.Where(x => x.IDProduto == idProduto).FirstOrDefault();
 
