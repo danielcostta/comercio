@@ -106,6 +106,7 @@ namespace Comercio.WindowsForms.Formularios
         {
             txtNomeProduto.Clear();
             txtValorProduto.Clear();
+            cbMarcaProduto.SelectedIndex = 0;
             product = null;
         }
 

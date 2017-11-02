@@ -32,25 +32,30 @@ namespace Comercio.WindowsForms.Formularios
             cbPedido.DisplayMember = "IDPedido";
             cbPedido.ValueMember = "IDPedido";
 
-            dataGridEntrega.ColumnCount = 3;
+            dataGridEntrega.ColumnCount = 4;
             dataGridEntrega.EditMode = DataGridViewEditMode.EditProgrammatically;
             dataGridEntrega.MultiSelect = false;
             dataGridEntrega.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
 
-            dataGridEntrega.Columns[0].HeaderText = "Código de Rastreio";
-            dataGridEntrega.Columns[0].DataPropertyName = "CodigoRastreio";
+            dataGridEntrega.Columns[0].HeaderText = "ID da entrega";
+            dataGridEntrega.Columns[0].DataPropertyName = "IDEntrega";
             dataGridEntrega.Columns[0].Width = 240;
-            dataGridEntrega.Columns[0].Name = "CodigoRastreio";
+            dataGridEntrega.Columns[0].Name = "IDEntrega";
 
-            dataGridEntrega.Columns[1].HeaderText = "Tipo de entrega";
-            dataGridEntrega.Columns[1].DataPropertyName = "Descricao";
-            dataGridEntrega.Columns[1].Width = 300;
-            dataGridEntrega.Columns[1].Name = "Descricao";
+            dataGridEntrega.Columns[1].HeaderText = "Código de Rastreio";
+            dataGridEntrega.Columns[1].DataPropertyName = "CodigoRastreio";
+            dataGridEntrega.Columns[1].Width = 240;
+            dataGridEntrega.Columns[1].Name = "CodigoRastreio";
 
-            dataGridEntrega.Columns[2].HeaderText = "Pedido";
-            dataGridEntrega.Columns[2].DataPropertyName = "IDPedido";
+            dataGridEntrega.Columns[2].HeaderText = "Tipo de entrega";
+            dataGridEntrega.Columns[2].DataPropertyName = "Descricao";
             dataGridEntrega.Columns[2].Width = 300;
-            dataGridEntrega.Columns[2].Name = "IDPedido";
+            dataGridEntrega.Columns[2].Name = "Descricao";
+
+            dataGridEntrega.Columns[3].HeaderText = "Pedido";
+            dataGridEntrega.Columns[3].DataPropertyName = "IDPedido";
+            dataGridEntrega.Columns[3].Width = 300;
+            dataGridEntrega.Columns[3].Name = "IDPedido";
 
             CarregarGrid();
         }
@@ -60,7 +65,7 @@ namespace Comercio.WindowsForms.Formularios
             var entregas = from ent in db.entrega
                            join te in db.tipoentrega on ent.IDTipoEntrega equals te.IDTipoEntrega
                            join ped in db.pedido on ent.IDPedido equals ped.IDPedido
-                           select (new { ent.CodigoRastreio, te.Descricao, ped.IDPedido });
+                           select (new { ent.IDEntrega, ent.CodigoRastreio, te.Descricao, ped.IDPedido });
             dataGridEntrega.DataSource = entregas.ToList();
 
         }
@@ -108,6 +113,8 @@ namespace Comercio.WindowsForms.Formularios
         public void LimparCampos()
         {
             txtCodigoRastreio.Clear();
+            cbTipoEntrega.SelectedIndex = 0;
+            cbPedido.SelectedIndex = 0;
             ent = null;
         }
 
@@ -115,8 +122,8 @@ namespace Comercio.WindowsForms.Formularios
         {
             if (dataGridEntrega.SelectedRows.Count > 0)
             {
-                DataGridViewRow linha = dataGridEntrega.SelectedRows[0];
-                int idEntrega = (int)linha.Cells["IDEntrega"].Value;
+
+                int idEntrega = (int)dataGridEntrega.CurrentRow.Cells[0].Value;
 
                 ent = db.entrega.Where(x => x.IDEntrega == idEntrega).FirstOrDefault();
 
