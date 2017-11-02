@@ -34,8 +34,9 @@
         </EntityType>
         <EntityType Name="entrega">
           <Key>
-            <PropertyRef Name="CodigoRastreio" />
+            <PropertyRef Name="IDEntrega" />
           </Key>
+          <Property Name="IDEntrega" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="CodigoRastreio" Type="varchar" MaxLength="20" Nullable="false" />
           <Property Name="IDTipoEntrega" Type="tinyint" Nullable="false" />
           <Property Name="IDPedido" Type="int" Nullable="false" />
@@ -330,8 +331,9 @@
         </EntityType>
         <EntityType Name="entrega">
           <Key>
-            <PropertyRef Name="CodigoRastreio" />
+            <PropertyRef Name="IDEntrega" />
           </Key>
+          <Property Name="IDEntrega" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="CodigoRastreio" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
           <Property Name="IDTipoEntrega" Type="Byte" Nullable="false" />
           <Property Name="IDPedido" Type="Int32" Nullable="false" />
@@ -545,6 +547,7 @@
                 <ScalarProperty Name="IDPedido" ColumnName="IDPedido" />
                 <ScalarProperty Name="IDTipoEntrega" ColumnName="IDTipoEntrega" />
                 <ScalarProperty Name="CodigoRastreio" ColumnName="CodigoRastreio" />
+                <ScalarProperty Name="IDEntrega" ColumnName="IDEntrega" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

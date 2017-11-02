@@ -37,6 +37,7 @@
           <ScalarProperty Name="IDPedido" ColumnName="IDPedido" />
           <ScalarProperty Name="IDTipoEntrega" ColumnName="IDTipoEntrega" />
           <ScalarProperty Name="CodigoRastreio" ColumnName="CodigoRastreio" />
+          <ScalarProperty Name="IDEntrega" ColumnName="IDEntrega" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>

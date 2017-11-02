@@ -37,6 +37,10 @@
             this.tipoDeEntregaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.gerenciadorDeProdutosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.produtosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.gerenciadorDeEntregasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.entregasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.gerenciadorDePedidosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.pedidosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -46,7 +50,9 @@
             this.gerenciadorDeVendedoresToolStripMenuItem,
             this.gerenciadorDeMarcasToolStripMenuItem,
             this.gerenciadorDeTipoDeEntregaToolStripMenuItem,
-            this.gerenciadorDeProdutosToolStripMenuItem});
+            this.gerenciadorDeProdutosToolStripMenuItem,
+            this.gerenciadorDeEntregasToolStripMenuItem,
+            this.gerenciadorDePedidosToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(877, 24);
@@ -73,13 +79,13 @@
             this.gerenciadorDeMarcasToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.marcasToolStripMenuItem});
             this.gerenciadorDeMarcasToolStripMenuItem.Name = "gerenciadorDeMarcasToolStripMenuItem";
-            this.gerenciadorDeMarcasToolStripMenuItem.Size = new System.Drawing.Size(140, 20);
-            this.gerenciadorDeMarcasToolStripMenuItem.Text = "Gerenciador de Marcas";
+            this.gerenciadorDeMarcasToolStripMenuItem.Size = new System.Drawing.Size(57, 20);
+            this.gerenciadorDeMarcasToolStripMenuItem.Text = "Marcas";
             // 
             // marcasToolStripMenuItem
             // 
             this.marcasToolStripMenuItem.Name = "marcasToolStripMenuItem";
-            this.marcasToolStripMenuItem.Size = new System.Drawing.Size(112, 22);
+            this.marcasToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.marcasToolStripMenuItem.Text = "Marcas";
             this.marcasToolStripMenuItem.Click += new System.EventHandler(this.marcasToolStripMenuItem_Click);
             // 
@@ -88,8 +94,9 @@
             this.gerenciadorDeTipoDeEntregaToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.tipoDeEntregaToolStripMenuItem});
             this.gerenciadorDeTipoDeEntregaToolStripMenuItem.Name = "gerenciadorDeTipoDeEntregaToolStripMenuItem";
-            this.gerenciadorDeTipoDeEntregaToolStripMenuItem.Size = new System.Drawing.Size(185, 20);
-            this.gerenciadorDeTipoDeEntregaToolStripMenuItem.Text = "Gerenciador de Tipo de Entrega";
+            this.gerenciadorDeTipoDeEntregaToolStripMenuItem.Size = new System.Drawing.Size(102, 20);
+            this.gerenciadorDeTipoDeEntregaToolStripMenuItem.Text = "Tipo de Entrega";
+            this.gerenciadorDeTipoDeEntregaToolStripMenuItem.Click += new System.EventHandler(this.gerenciadorDeTipoDeEntregaToolStripMenuItem_Click);
             // 
             // tipoDeEntregaToolStripMenuItem
             // 
@@ -112,6 +119,36 @@
             this.produtosToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.produtosToolStripMenuItem.Text = "Produtos";
             this.produtosToolStripMenuItem.Click += new System.EventHandler(this.produtosToolStripMenuItem_Click);
+            // 
+            // gerenciadorDeEntregasToolStripMenuItem
+            // 
+            this.gerenciadorDeEntregasToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.entregasToolStripMenuItem});
+            this.gerenciadorDeEntregasToolStripMenuItem.Name = "gerenciadorDeEntregasToolStripMenuItem";
+            this.gerenciadorDeEntregasToolStripMenuItem.Size = new System.Drawing.Size(147, 20);
+            this.gerenciadorDeEntregasToolStripMenuItem.Text = "Gerenciador de Entregas";
+            // 
+            // entregasToolStripMenuItem
+            // 
+            this.entregasToolStripMenuItem.Name = "entregasToolStripMenuItem";
+            this.entregasToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.entregasToolStripMenuItem.Text = "Entregas";
+            this.entregasToolStripMenuItem.Click += new System.EventHandler(this.entregasToolStripMenuItem_Click);
+            // 
+            // gerenciadorDePedidosToolStripMenuItem
+            // 
+            this.gerenciadorDePedidosToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.pedidosToolStripMenuItem});
+            this.gerenciadorDePedidosToolStripMenuItem.Name = "gerenciadorDePedidosToolStripMenuItem";
+            this.gerenciadorDePedidosToolStripMenuItem.Size = new System.Drawing.Size(144, 20);
+            this.gerenciadorDePedidosToolStripMenuItem.Text = "Gerenciador de Pedidos";
+            // 
+            // pedidosToolStripMenuItem
+            // 
+            this.pedidosToolStripMenuItem.Name = "pedidosToolStripMenuItem";
+            this.pedidosToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.pedidosToolStripMenuItem.Text = "Pedidos";
+            this.pedidosToolStripMenuItem.Click += new System.EventHandler(this.pedidosToolStripMenuItem_Click);
             // 
             // FormPrincipal
             // 
@@ -141,5 +178,9 @@
         private System.Windows.Forms.ToolStripMenuItem tipoDeEntregaToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem gerenciadorDeProdutosToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem produtosToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem gerenciadorDeEntregasToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem entregasToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem gerenciadorDePedidosToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem pedidosToolStripMenuItem;
     }
 }

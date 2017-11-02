@@ -83,8 +83,9 @@
   </EntityType>
   <EntityType Name="entrega">
     <Key>
-      <PropertyRef Name="CodigoRastreio" />
+      <PropertyRef Name="IDEntrega" />
     </Key>
+    <Property Name="IDEntrega" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <Property Name="CodigoRastreio" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
     <Property Name="IDTipoEntrega" Type="Byte" Nullable="false" />
     <Property Name="IDPedido" Type="Int32" Nullable="false" />

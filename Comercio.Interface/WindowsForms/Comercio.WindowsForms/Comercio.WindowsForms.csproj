@@ -52,11 +52,23 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Formularios\FormEntrega.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\FormEntrega.Designer.cs">
+      <DependentUpon>FormEntrega.cs</DependentUpon>
+    </Compile>
     <Compile Include="Formularios\FormMarca.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Formularios\FormMarca.Designer.cs">
       <DependentUpon>FormMarca.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\FormPedido.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\FormPedido.Designer.cs">
+      <DependentUpon>FormPedido.cs</DependentUpon>
     </Compile>
     <Compile Include="Formularios\FormPrincipal.cs">
       <SubType>Form</SubType>
@@ -84,8 +96,14 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Formularios\FormEntrega.resx">
+      <DependentUpon>FormEntrega.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Formularios\FormMarca.resx">
       <DependentUpon>FormMarca.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\FormPedido.resx">
+      <DependentUpon>FormPedido.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\FormPrincipal.resx">
       <DependentUpon>FormPrincipal.cs</DependentUpon>

@@ -132,7 +132,6 @@ namespace Comercio.WindowsForms.Formularios
 
             }
 
-
         }
 
         private void btnExcluirProduto_Click(object sender, EventArgs e)

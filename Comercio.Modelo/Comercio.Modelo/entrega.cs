@@ -14,6 +14,7 @@ namespace Comercio.Modelo
     
     public partial class entrega
     {
+        public int IDEntrega { get; set; }
         public string CodigoRastreio { get; set; }
         public byte IDTipoEntrega { get; set; }
         public int IDPedido { get; set; }

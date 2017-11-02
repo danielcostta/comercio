@@ -29,8 +29,9 @@
   </EntityType>
   <EntityType Name="entrega">
     <Key>
-      <PropertyRef Name="CodigoRastreio" />
+      <PropertyRef Name="IDEntrega" />
     </Key>
+    <Property Name="IDEntrega" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="CodigoRastreio" Type="varchar" MaxLength="20" Nullable="false" />
     <Property Name="IDTipoEntrega" Type="tinyint" Nullable="false" />
     <Property Name="IDPedido" Type="int" Nullable="false" />
