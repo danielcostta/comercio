@@ -35,12 +35,12 @@
             this.cbProduto = new System.Windows.Forms.ComboBox();
             this.txtQuantidade = new System.Windows.Forms.TextBox();
             this.lblVendedor = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.dataGridProduto = new System.Windows.Forms.DataGridView();
+            this.cbVendedor = new System.Windows.Forms.ComboBox();
+            this.dataGridPedido = new System.Windows.Forms.DataGridView();
             this.btnSalvarPedido = new System.Windows.Forms.Button();
             this.btnEditarPedido = new System.Windows.Forms.Button();
             this.btnExcluirPedido = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridProduto)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridPedido)).BeginInit();
             this.SuspendLayout();
             // 
             // lblQuantidade
@@ -102,21 +102,21 @@
             this.lblVendedor.TabIndex = 6;
             this.lblVendedor.Text = "Vendedor:";
             // 
-            // comboBox1
+            // cbVendedor
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(91, 92);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(355, 21);
-            this.comboBox1.TabIndex = 7;
+            this.cbVendedor.FormattingEnabled = true;
+            this.cbVendedor.Location = new System.Drawing.Point(91, 92);
+            this.cbVendedor.Name = "cbVendedor";
+            this.cbVendedor.Size = new System.Drawing.Size(355, 21);
+            this.cbVendedor.TabIndex = 7;
             // 
-            // dataGridProduto
+            // dataGridPedido
             // 
-            this.dataGridProduto.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridProduto.Location = new System.Drawing.Point(12, 171);
-            this.dataGridProduto.Name = "dataGridProduto";
-            this.dataGridProduto.Size = new System.Drawing.Size(712, 239);
-            this.dataGridProduto.TabIndex = 8;
+            this.dataGridPedido.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridPedido.Location = new System.Drawing.Point(12, 171);
+            this.dataGridPedido.Name = "dataGridPedido";
+            this.dataGridPedido.Size = new System.Drawing.Size(712, 239);
+            this.dataGridPedido.TabIndex = 8;
             // 
             // btnSalvarPedido
             // 
@@ -126,6 +126,7 @@
             this.btnSalvarPedido.TabIndex = 9;
             this.btnSalvarPedido.Text = "Salvar";
             this.btnSalvarPedido.UseVisualStyleBackColor = true;
+            this.btnSalvarPedido.Click += new System.EventHandler(this.btnSalvarPedido_Click);
             // 
             // btnEditarPedido
             // 
@@ -135,6 +136,7 @@
             this.btnEditarPedido.TabIndex = 10;
             this.btnEditarPedido.Text = "Editar";
             this.btnEditarPedido.UseVisualStyleBackColor = true;
+            this.btnEditarPedido.Click += new System.EventHandler(this.btnEditarPedido_Click);
             // 
             // btnExcluirPedido
             // 
@@ -144,6 +146,7 @@
             this.btnExcluirPedido.TabIndex = 11;
             this.btnExcluirPedido.Text = "Excluir";
             this.btnExcluirPedido.UseVisualStyleBackColor = true;
+            this.btnExcluirPedido.Click += new System.EventHandler(this.btnExcluirPedido_Click);
             // 
             // FormPedido
             // 
@@ -153,8 +156,8 @@
             this.Controls.Add(this.btnExcluirPedido);
             this.Controls.Add(this.btnEditarPedido);
             this.Controls.Add(this.btnSalvarPedido);
-            this.Controls.Add(this.dataGridProduto);
-            this.Controls.Add(this.comboBox1);
+            this.Controls.Add(this.dataGridPedido);
+            this.Controls.Add(this.cbVendedor);
             this.Controls.Add(this.lblVendedor);
             this.Controls.Add(this.txtQuantidade);
             this.Controls.Add(this.cbProduto);
@@ -165,7 +168,7 @@
             this.Name = "FormPedido";
             this.Text = "FormPedido";
             this.Load += new System.EventHandler(this.FormPedido_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridProduto)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridPedido)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -180,8 +183,8 @@
         private System.Windows.Forms.ComboBox cbProduto;
         private System.Windows.Forms.TextBox txtQuantidade;
         private System.Windows.Forms.Label lblVendedor;
-        private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.DataGridView dataGridProduto;
+        private System.Windows.Forms.ComboBox cbVendedor;
+        private System.Windows.Forms.DataGridView dataGridPedido;
         private System.Windows.Forms.Button btnSalvarPedido;
         private System.Windows.Forms.Button btnEditarPedido;
         private System.Windows.Forms.Button btnExcluirPedido;
