@@ -29,9 +29,8 @@ namespace Comercio.WindowsForms.Formularios
 
         private void marcasToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            FormMarca formMarca = new FormMarca();
-            formMarca.MdiParent = this;
-            formMarca.Show();
+             FormMarca formMarca = new FormMarca();
+             formMarca.ShowDialog();
         }
 
         private void tipoDeEntregaToolStripMenuItem_Click(object sender, EventArgs e)

@@ -15,7 +15,6 @@ namespace Comercio.WindowsForms.Formularios
     {
         comercioEntities db = new comercioEntities();
         private produto product;
-        private marca marc;
         public FormProduto()
         {
             InitializeComponent();

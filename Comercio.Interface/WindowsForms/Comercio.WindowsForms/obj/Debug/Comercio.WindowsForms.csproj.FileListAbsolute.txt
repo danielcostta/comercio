@@ -21,3 +21,4 @@ D:\SI\6 Período\Desenvolvimento de Sistemas de Informação Avançados I\Visual
 D:\SI\6 Período\Desenvolvimento de Sistemas de Informação Avançados I\VisualStudioProjects\Comercio\Comercio.Interface\WindowsForms\Comercio.WindowsForms\obj\Debug\Comercio.WindowsForms.Formularios.FormProduto.resources
 D:\SI\6 Período\Desenvolvimento de Sistemas de Informação Avançados I\VisualStudioProjects\Comercio\Comercio.Interface\WindowsForms\Comercio.WindowsForms\obj\Debug\Comercio.WindowsForms.Formularios.FormEntrega.resources
 D:\SI\6 Período\Desenvolvimento de Sistemas de Informação Avançados I\VisualStudioProjects\Comercio\Comercio.Interface\WindowsForms\Comercio.WindowsForms\obj\Debug\Comercio.WindowsForms.Formularios.FormPedido.resources
+D:\SI\6 Período\Desenvolvimento de Sistemas de Informação Avançados I\VisualStudioProjects\Comercio\Comercio.Interface\WindowsForms\Comercio.WindowsForms\obj\Debug\Comercio.WindowsForms.Formularios.FormLogin.resources

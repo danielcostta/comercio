@@ -15,8 +15,6 @@ namespace Comercio.WindowsForms.Formularios
     {
         comercioEntities db = new comercioEntities();
         private entrega ent;
-        private pedido ped;
-        private tipoentrega te;
         public FormEntrega()
         {
             InitializeComponent();
