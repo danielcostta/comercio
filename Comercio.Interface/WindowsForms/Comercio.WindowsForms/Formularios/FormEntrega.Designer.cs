@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormEntrega));
             this.lblCodigoRastreio = new System.Windows.Forms.Label();
             this.txtCodigoRastreio = new System.Windows.Forms.TextBox();
             this.lblPedido = new System.Windows.Forms.Label();
@@ -144,6 +145,7 @@
             this.Controls.Add(this.lblPedido);
             this.Controls.Add(this.txtCodigoRastreio);
             this.Controls.Add(this.lblCodigoRastreio);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FormEntrega";
             this.Text = "FormEntrega";
             this.Load += new System.EventHandler(this.FormEntrega_Load);

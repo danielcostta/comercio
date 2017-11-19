@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormProduto));
             this.lblNomeProduto = new System.Windows.Forms.Label();
             this.lblValorProduto = new System.Windows.Forms.Label();
             this.txtNomeProduto = new System.Windows.Forms.TextBox();
@@ -143,6 +144,7 @@
             this.Controls.Add(this.txtNomeProduto);
             this.Controls.Add(this.lblValorProduto);
             this.Controls.Add(this.lblNomeProduto);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FormProduto";
             this.Text = "FormProduto";
             this.Load += new System.EventHandler(this.FormProduto_Load);

@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormTipoEntrega));
             this.lblDescricaoTipoEntrega = new System.Windows.Forms.Label();
             this.txtDescricao = new System.Windows.Forms.TextBox();
             this.btnSalvarTipoEntrega = new System.Windows.Forms.Button();
@@ -102,6 +103,7 @@
             this.Controls.Add(this.btnSalvarTipoEntrega);
             this.Controls.Add(this.txtDescricao);
             this.Controls.Add(this.lblDescricaoTipoEntrega);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FormTipoEntrega";
             this.Text = "FormTipoEntrega";
             this.Load += new System.EventHandler(this.FormTipoEntrega_Load);

@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormPedido));
             this.lblQuantidade = new System.Windows.Forms.Label();
             this.cbCliente = new System.Windows.Forms.ComboBox();
             this.lblCliente = new System.Windows.Forms.Label();
@@ -165,6 +166,7 @@
             this.Controls.Add(this.lblCliente);
             this.Controls.Add(this.cbCliente);
             this.Controls.Add(this.lblQuantidade);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FormPedido";
             this.Text = "FormPedido";
             this.Load += new System.EventHandler(this.FormPedido_Load);

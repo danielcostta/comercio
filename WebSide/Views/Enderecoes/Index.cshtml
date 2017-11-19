@@ -1,0 +1,63 @@
+﻿@model IEnumerable<WebSide.Models.Endereco>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Cadastro de endereços</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Cidade.NomeCidade)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Cliente.NomeCliente)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Logradouro)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Numero)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Bairro)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Cidade.NomeCidade)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Cliente.NomeCliente)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Logradouro)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Numero)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Bairro)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.IDEndereco }) |
+            @Html.ActionLink("Details", "Details", new { id=item.IDEndereco }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.IDEndereco })
+        </td>
+    </tr>
+}
+
+</table>
+
+<br /> <br />
+
+@Html.ActionLink("Cadastro de estados", "Index", "Estados") <br />
+@Html.ActionLink("Cadastro de cidades", "Index", "Cidades") <br />
+@Html.ActionLink("Cadastro de clientes", "Index", "Clientes") <br />

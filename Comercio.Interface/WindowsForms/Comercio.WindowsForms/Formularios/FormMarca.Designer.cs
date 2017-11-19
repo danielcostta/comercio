@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormMarca));
             this.lblNomeMarca = new System.Windows.Forms.Label();
             this.txtNomeMarca = new System.Windows.Forms.TextBox();
             this.btnSalvarMarca = new System.Windows.Forms.Button();
@@ -102,6 +103,7 @@
             this.Controls.Add(this.btnSalvarMarca);
             this.Controls.Add(this.txtNomeMarca);
             this.Controls.Add(this.lblNomeMarca);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FormMarca";
             this.Text = "FormMarca";
             this.Load += new System.EventHandler(this.FormMarca_Load);
